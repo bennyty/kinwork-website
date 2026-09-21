@@ -28,6 +28,34 @@ body {
   font-family: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Bench underline on hover, echoing the table stroke under "work" in the
+   logo: a seat line with two inset legs. Drawn in currentColor. */
+.bench-link,
+.prose-kinwork a {
+  position: relative;
+  text-decoration: none;
+}
+.bench-link::after,
+.prose-kinwork a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.55em;
+  height: 0.45em;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(currentColor, currentColor) left top / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 10% 0 / 2px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) 90% 0 / 2px 100% no-repeat;
+  transition: opacity 150ms ease;
+}
+.bench-link:hover::after,
+.prose-kinwork a:hover::after {
+  opacity: 1;
+}
+
 .prose-kinwork {
   font-size: 1.0625rem;
   line-height: 1.75;
@@ -63,8 +91,6 @@ body {
 }
 .prose-kinwork a {
   color: var(--terracotta);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 .prose-kinwork blockquote {
   border-left: 3px solid var(--copper);

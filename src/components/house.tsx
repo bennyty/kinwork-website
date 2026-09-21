@@ -2,12 +2,14 @@ import type { ReactNode } from "react";
 
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <span
-      className={`font-serif leading-none text-ink inline-flex flex-col ${className ?? ""}`}
-    >
-      <span className="text-xl">Kin</span>
-      <span className="text-xl">work</span>
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element -- static SVG asset, no optimization needed
+    <img
+      src="/kinwork-wordmark.svg"
+      alt="Kinwork"
+      width={369}
+      height={161}
+      className={className}
+    />
   );
 }
 
@@ -23,14 +25,7 @@ function Roof() {
       aria-hidden
       className="absolute -top-[46px] left-1/2 -translate-x-1/2 w-[240px]"
     >
-      <polygon points="30,60 120,12 210,60" fill="var(--cream)" stroke="none" />
-      <polyline
-        points="30,60 120,12 210,60"
-        fill="none"
-        stroke="var(--terracotta)"
-        strokeWidth="3"
-        strokeLinejoin="round"
-      />
+      {/* Chimney first so the roof's cream fill and edge overlap its base */}
       <rect
         x="150"
         y="16"
@@ -39,6 +34,14 @@ function Roof() {
         fill="var(--cream)"
         stroke="var(--terracotta)"
         strokeWidth="3"
+      />
+      <polygon points="30,60 120,12 210,60" fill="var(--cream)" stroke="none" />
+      <polyline
+        points="30,60 120,12 210,60"
+        fill="none"
+        stroke="var(--terracotta)"
+        strokeWidth="3"
+        strokeLinejoin="round"
       />
       <circle cx="120" cy="34" r="5" fill="var(--terracotta)" />
     </svg>
@@ -85,15 +88,15 @@ export function FlowerBox({ className }: { className?: string }) {
         <g key={x}>
           <line
             x1={x}
-            y1={0}
+            y1={24}
             x2={x}
-            y2={8 + (i % 2) * 6}
+            y2={12 - (i % 2) * 5}
             stroke="var(--terracotta)"
             strokeWidth="2.5"
           />
           <circle
             cx={x}
-            cy={11 + (i % 2) * 6}
+            cy={9 - (i % 2) * 5}
             r="3.5"
             fill="var(--terracotta)"
           />

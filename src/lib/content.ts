@@ -20,7 +20,10 @@ export type PostMeta = {
   kind: "case-study" | "article";
   summary: string;
   client?: string;
+  published: boolean;
 };
+
+export const isDev = process.env.NODE_ENV === "development";
 
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(contentDir)) return [];
@@ -32,6 +35,7 @@ export function getAllPosts(): PostMeta[] {
       const { data } = matter(fs.readFileSync(path.join(contentDir, file), "utf8"));
       return toMeta(slug, data);
     })
+    .filter((post) => isDev || post.published)
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
@@ -50,6 +54,7 @@ function toMeta(slug: string, data: Record<string, unknown>): PostMeta {
     kind: data.kind === "case-study" ? "case-study" : "article",
     summary: typeof data.summary === "string" ? data.summary : "",
     client: typeof data.client === "string" ? data.client : undefined,
+    published: data.published === true,
   };
 }
 

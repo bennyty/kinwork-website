@@ -3,6 +3,7 @@ title: Welcome to the window box
 date: 2026-09-21
 kind: article
 summary: Why Kinwork exists, and why we believe small businesses deserve software that fits them — not the other way around.
+published: false
 ---
 
 Every small business we've met runs on a workflow that no off-the-shelf product ever anticipated. A whiteboard that everyone glances at on the way in. A spreadsheet with twelve years of institutional knowledge in its column headers. A text thread that is, functionally, the dispatch system.

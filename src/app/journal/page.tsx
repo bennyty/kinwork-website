@@ -30,6 +30,11 @@ export default function JournalPage() {
             <p className="text-xs uppercase tracking-wide text-terracotta">
               {post.kind === "case-study" ? "Case study" : "Article"}
               {post.client ? ` · ${post.client}` : ""}
+              {!post.published && (
+                <span className="ml-2 rounded bg-red-600 px-2 py-0.5 font-bold text-white">
+                  Draft
+                </span>
+              )}
             </p>
             <h2 className="font-serif text-2xl mt-2 text-ink group-hover:text-terracotta transition-colors">
               {post.title}

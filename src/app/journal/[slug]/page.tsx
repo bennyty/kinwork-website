@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts, getPost, formatDate } from "@/lib/content";
+import { getAllPosts, getPost, formatDate, isDev } from "@/lib/content";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -26,10 +26,15 @@ export default async function PostPage({
     <article className="mx-auto w-full max-w-3xl px-6 mt-16">
       <Link
         href="/journal"
-        className="text-sm text-terracotta hover:text-terracotta-dark transition-colors"
+        className="bench-link text-sm text-terracotta hover:text-terracotta-dark transition-colors"
       >
         ← All case studies &amp; articles
       </Link>
+      {isDev && !meta.published && (
+        <p className="mt-6 inline-block rounded bg-red-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+          Draft — not published
+        </p>
+      )}
       <p className="mt-8 text-xs uppercase tracking-wide text-terracotta">
         {meta.kind === "case-study" ? "Case study" : "Article"}
         {meta.client ? ` · ${meta.client}` : ""}

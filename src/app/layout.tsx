@@ -40,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <nav className="flex items-center gap-6 text-sm">
             <Link
               href="/journal"
-              className="text-ink-soft hover:text-terracotta transition-colors"
+              className="bench-link text-ink-soft hover:text-terracotta transition-colors"
             >
               Case studies &amp; articles
             </Link>
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <p>
               <a
                 href="mailto:contact@kinwork.us"
-                className="hover:text-terracotta transition-colors"
+                className="bench-link hover:text-terracotta transition-colors"
               >
                 contact@kinwork.us
               </a>{" "}

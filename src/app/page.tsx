@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HouseFrame, Door, FlowerBox } from "@/components/house";
+import { HouseFrame, Door, FlowerBox, Wordmark } from "@/components/house";
 import { ContactButton } from "@/components/contact-button";
 import { getAllPosts, formatDate } from "@/lib/content";
 
@@ -11,8 +11,10 @@ export default function Home() {
       {/* Hero — the front of the card */}
       <HouseFrame className="mt-20">
         <div className="px-8 py-16 sm:px-16 sm:py-20 text-center">
-          <h1 className="font-serif text-5xl sm:text-6xl text-ink">Kinwork</h1>
-          <div className="mx-auto mt-5 mb-6 h-[3px] w-16 bg-copper" />
+          <h1>
+            <Wordmark className="mx-auto h-24 w-auto sm:h-32" />
+          </h1>
+          <div className="mx-auto mt-5 mb-6 h-1 w-16 bg-copper" />
           <p className="font-serif italic text-xl sm:text-2xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
             Custom applications and workflow automation
             <br className="hidden sm:block" /> for more efficient work and a
@@ -34,21 +36,16 @@ export default function Home() {
             <p>
               <span className="text-ink font-medium">Kinwork</span> is a
               portmanteau of <em className="font-serif">kinship</em> and{" "}
-              <em className="font-serif">working</em> — because the best
-              software for your business starts with a relationship, not a
+              <em className="font-serif">work</em>. We believe that workflow
+              improvements for your business starts with a relationship, not a
               requirements document.
             </p>
             <p>
               We work closely with small businesses to learn how they actually
-              work: the morning routines, the sticky notes, the spreadsheet
+              work. We will learn about the routines, the hard worker that
+              manually copies information between inflexible software, the spreadsheet
               that holds everything together. Then we design bespoke
-              applications that fit into that workflow — not the other way
-              around — so the tools disappear and the work gets easier.
-            </p>
-            <p>
-              No off-the-shelf compromises. No “change how you operate to suit
-              the software.” Just custom applications shaped around the way
-              your business already runs, making it more efficient.
+              applications that streamline the workflow and connect the pieces.
             </p>
           </div>
         </div>
@@ -61,16 +58,16 @@ export default function Home() {
         <div className="mt-8 grid gap-8 sm:grid-cols-3">
           {[
             {
-              title: "We visit",
-              text: "We sit with your team and learn the real workflow — the one that never made it into a manual.",
+              title: "Visit",
+              text: "We sit with your team and learn the workflow that makes your business tick — the one that never made it into a manual.",
             },
             {
-              title: "We design",
-              text: "We shape a bespoke application around that workflow, trimming the busywork and keeping what works.",
+              title: "Design",
+              text: "We shape a bespoke application around that workflow, streamlining your process.",
             },
             {
-              title: "We stay kin",
-              text: "We stick around as your business grows, tending the software the way you tend the shop.",
+              title: "Stay kin",
+              text: "We are committed to staying in touch and supporting your teams as your business grows and changes.",
             },
           ].map((step, i) => (
             <div
@@ -94,12 +91,12 @@ export default function Home() {
               From the window box
             </h2>
             <p className="mt-2 text-ink-soft">
-              Case studies and articles on building software that fits.
+              Case Studies - where we've built software that flourishes.
             </p>
           </div>
           <Link
             href="/journal"
-            className="shrink-0 text-terracotta hover:text-terracotta-dark transition-colors"
+            className="bench-link shrink-0 text-terracotta hover:text-terracotta-dark transition-colors"
           >
             See all →
           </Link>
