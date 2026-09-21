@@ -83,6 +83,7 @@ export default function Home() {
       </section>
 
       {/* Journal preview — the flower box */}
+      {posts.length > 0 && (
       <section className="mt-20">
         <div className="flex items-end justify-between gap-4">
           <div>
@@ -124,6 +125,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      )}
     </div>
   );
 }

@@ -40,10 +40,14 @@ export function getAllPosts(): PostMeta[] {
 }
 
 export async function getPost(slug: string) {
-  const raw = fs.readFileSync(path.join(contentDir, `${slug}.md`), "utf8");
+  const filePath = path.join(contentDir, `${slug}.md`);
+  if (!fs.existsSync(filePath)) return undefined;
+  const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
+  const meta = toMeta(slug, data);
+  if (!isDev && !meta.published) return undefined;
   const processed = await remark().use(html).process(content);
-  return { meta: toMeta(slug, data), html: processed.toString() };
+  return { meta, html: processed.toString() };
 }
 
 function toMeta(slug: string, data: Record<string, unknown>): PostMeta {

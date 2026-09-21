@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { getAllPosts, getPost, formatDate, isDev } from "@/lib/content";
 
+// Static export requires at least one route for a dynamic segment. When no
+// posts are published, fall back to a sentinel slug that 404s instead of
+// failing the build.
+const NO_POSTS_SLUG = "__no-posts__";
+
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  const posts = getAllPosts();
+  if (posts.length === 0) return [{ slug: NO_POSTS_SLUG }];
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export const dynamicParams = false;
@@ -12,15 +20,18 @@ export async function generateMetadata({
   params,
 }: PageProps<"/journal/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const { meta } = await getPost(slug);
-  return { title: meta.title, description: meta.summary };
+  const post = await getPost(slug);
+  if (!post) return {};
+  return { title: post.meta.title, description: post.meta.summary };
 }
 
 export default async function PostPage({
   params,
 }: PageProps<"/journal/[slug]">) {
   const { slug } = await params;
-  const { meta, html } = await getPost(slug);
+  const post = await getPost(slug);
+  if (!post) notFound();
+  const { meta, html } = post;
 
   return (
     <article className="mx-auto w-full max-w-3xl px-6 mt-16">

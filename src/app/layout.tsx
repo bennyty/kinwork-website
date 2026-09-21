@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./globals.css";
 import { Wordmark } from "@/components/house";
 import { ContactButton } from "@/components/contact-button";
+import { getAllPosts } from "@/lib/content";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const hasPosts = getAllPosts().length > 0;
+
   return (
     <html
       lang="en"
@@ -38,12 +41,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Wordmark className="h-10 w-auto" />
           </Link>
           <nav className="flex items-center gap-6 text-sm">
-            <Link
-              href="/journal"
-              className="bench-link text-ink-soft hover:text-terracotta transition-colors"
-            >
-              Case studies &amp; articles
-            </Link>
+            {hasPosts && (
+              <Link
+                href="/journal"
+                className="bench-link text-ink-soft hover:text-terracotta transition-colors"
+              >
+                Case studies &amp; articles
+              </Link>
+            )}
             <ContactButton compact />
           </nav>
         </header>
