@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f5eee1;
+  --cream-deep: #efe5d3;
+  --terracotta: #b0593a;
+  --terracotta-dark: #96482e;
+  --copper: #c98a5e;
+  --ink: #443627;
+  --ink-soft: #6b5a47;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-dark: var(--terracotta-dark);
+  --color-copper: var(--copper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-karla);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+}
+
+.prose-kinwork {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-kinwork h2,
+.prose-kinwork h3 {
+  font-family: var(--font-fraunces), ui-serif, serif;
+  color: var(--ink);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-kinwork h2 {
+  font-size: 1.5rem;
+}
+.prose-kinwork h3 {
+  font-size: 1.25rem;
+}
+.prose-kinwork p {
+  margin-bottom: 1.1rem;
+}
+.prose-kinwork ul,
+.prose-kinwork ol {
+  margin: 0 0 1.1rem 1.4rem;
+}
+.prose-kinwork ul {
+  list-style: disc;
+}
+.prose-kinwork ol {
+  list-style: decimal;
+}
+.prose-kinwork li {
+  margin-bottom: 0.35rem;
+}
+.prose-kinwork a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-kinwork blockquote {
+  border-left: 3px solid var(--copper);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 1.1rem;
+}
+.prose-kinwork code {
+  background: var(--cream-deep);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+.prose-kinwork pre {
+  background: var(--cream-deep);
+  border: 1px solid var(--copper);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.1rem;
+}
+.prose-kinwork pre code {
+  background: none;
+  padding: 0;
 }

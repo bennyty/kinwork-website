@@ -1,0 +1,35 @@
+# Decap CMS configuration.
+#
+# The github backend commits edits straight to the repo; sign in with a
+# GitHub account that has write access: https://decapcms.org/docs/github-backend/
+#
+# For local editing without any auth, run `pnpm dlx decap-server` in one
+# terminal and `pnpm dev` in another, then open http://localhost:3000/admin/
+backend:
+  name: github
+  repo: bennyty/kinwork-website
+  branch: main
+
+local_backend: true
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: journal
+    label: Case studies & articles
+    folder: content/journal
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD, time_format: false }
+      - label: Kind
+        name: kind
+        widget: select
+        options:
+          - { label: Case study, value: case-study }
+          - { label: Article, value: article }
+      - { label: Client, name: client, widget: string, required: false, hint: "Shown on case studies, e.g. 'A neighborhood repair shop'" }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Body, name: body, widget: markdown }
