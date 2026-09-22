@@ -56,8 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <footer className="border-t border-copper/40 mt-16">
           <div className="mx-auto w-full max-w-5xl px-6 py-8 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-sm text-ink-soft">
             <p>
-              <span className="font-serif text-ink">Kinwork</span> · Great
-              Falls, VA
+              <span className="font-serif text-ink">Kinwork LLC</span> · Great Falls, VA
             </p>
             <p>
               <a

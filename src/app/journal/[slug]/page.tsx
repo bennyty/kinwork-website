@@ -46,11 +46,11 @@ export default async function PostPage({
           Draft — not published
         </p>
       )}
-      <p className="mt-8 text-xs uppercase tracking-wide text-terracotta">
-        {meta.kind === "case-study" ? "Case study" : "Article"}
-        {meta.client ? ` · ${meta.client}` : ""}
-      </p>
       <h1 className="font-serif text-4xl mt-2 text-ink">{meta.title}</h1>
+      <p className="mt-8 uppercase tracking-wide text-terracotta">
+        {meta.kind === "case-study" ? "Case study" : "Article"}
+        {meta.client ? ` - ${meta.client}` : ""}
+      </p>
       <p className="mt-3 text-sm text-ink-soft">{formatDate(meta.date)}</p>
       <div className="mx-0 mt-6 mb-8 h-[3px] w-16 bg-copper" />
       <div

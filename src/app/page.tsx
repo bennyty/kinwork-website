@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HouseFrame, Door, FlowerBox, Wordmark } from "@/components/house";
+import { Frame, Door, FlowerBox, Wordmark } from "@/components/house";
 import { ContactButton } from "@/components/contact-button";
 import { getAllPosts, formatDate } from "@/lib/content";
 
@@ -9,22 +9,20 @@ export default function Home() {
   return (
     <div className="mx-auto w-full max-w-5xl px-6">
       {/* Hero — the front of the card */}
-      <HouseFrame className="mt-20">
+      <Frame className="mt-20">
         <div className="px-8 py-16 sm:px-16 sm:py-20 text-center">
           <h1>
             <Wordmark className="mx-auto h-24 w-auto sm:h-32" />
           </h1>
-          <div className="mx-auto mt-5 mb-6 h-1 w-16 bg-copper" />
           <p className="font-serif italic text-xl sm:text-2xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
             Custom applications and workflow automation
-            <br className="hidden sm:block" /> for more efficient work and a
-            better life
+            <br className="hidden sm:block" /> for more efficient work and a better life
           </p>
           <div className="mt-10">
             <ContactButton />
           </div>
         </div>
-      </HouseFrame>
+      </Frame>
 
       {/* Brand story */}
       <section className="mt-20 grid gap-10 sm:grid-cols-[1fr_auto] sm:items-center">
@@ -42,7 +40,7 @@ export default function Home() {
             </p>
             <p>
               We work closely with small businesses to learn how they actually
-              work. We will learn about the routines, the hard worker that
+              work. We will learn about the routines, that hard worker who
               manually copies information between inflexible software, the spreadsheet
               that holds everything together. Then we design bespoke
               applications that streamline the workflow and connect the pieces.
@@ -67,7 +65,7 @@ export default function Home() {
             },
             {
               title: "Stay kin",
-              text: "We are committed to staying in touch and supporting your teams as your business grows and changes.",
+              text: "We are committed to becoming family and supporting your teams as your business grows and changes.",
             },
           ].map((step, i) => (
             <div

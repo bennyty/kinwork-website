@@ -48,7 +48,7 @@ function Roof() {
   );
 }
 
-export function HouseFrame({
+export function Frame({
   children,
   className,
 }: {
@@ -60,7 +60,6 @@ export function HouseFrame({
       <div className="border-[3px] border-terracotta rounded-sm">
         {children}
       </div>
-      <Roof />
     </div>
   );
 }
