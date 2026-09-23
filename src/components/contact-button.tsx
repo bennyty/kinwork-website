@@ -17,7 +17,7 @@ export function ContactButton({ compact = false }: { compact?: boolean }) {
     return (
       <a
         href={mailto}
-        className="rounded-full bg-terracotta px-4 py-1.5 text-cream text-sm hover:bg-terracotta-dark transition-colors"
+        className="rounded-full bg-terracotta px-4 py-1.5 text-cream text-sm whitespace-nowrap hover:bg-terracotta-dark transition-colors"
       >
         Contact us
       </a>

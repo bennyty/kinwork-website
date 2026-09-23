@@ -16,4 +16,4 @@ We come back with a customized solution that is tailored specifically to your bu
 
 Kinwork brings value to your business at no risk to you.
 
-If any of this sounds like what you'd like for your coworkers, [we'd love to hear from you](mailto:contact@kinwork.us?subject=Hello%20Kinwork%20%E2%80%94%20let%27s%20talk%20about%20my%20workflow).
+If we sound like people you want to meet, [we'd love to hear from you](mailto:contact@kinwork.us?subject=Hello%20Kinwork%20%E2%80%94%20let%27s%20talk%20about%20my%20workflow).

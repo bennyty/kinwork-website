@@ -36,15 +36,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${karla.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header className="mx-auto w-full max-w-5xl px-6 py-6 flex items-center justify-between">
-          <Link href="/" aria-label="Kinwork home">
+        <header className="mx-auto w-full max-w-5xl px-6 py-6 flex flex-nowrap items-center justify-between gap-4">
+          <Link href="/" aria-label="Kinwork home" className="shrink-0">
             <Wordmark className="h-10 w-auto" />
           </Link>
-          <nav className="flex items-center gap-6 text-sm">
+          <nav className="flex flex-1 flex-nowrap items-center justify-end gap-6 text-sm min-w-0">
             {hasPosts && (
               <Link
                 href="/journal"
-                className="bench-link text-ink-soft hover:text-terracotta transition-colors"
+                className="bench-link text-ink-soft hover:text-terracotta transition-colors truncate min-w-0"
               >
                 Case studies &amp; articles
               </Link>
