@@ -85,13 +85,9 @@ export default function Home() {
       <section className="mt-20">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <FlowerBox className="h-9 w-auto mb-4" />
             <h2 className="font-serif text-3xl text-ink">
-              From the window box
+              Case Studies &amp; Articles
             </h2>
-            <p className="mt-2 text-ink-soft">
-              Case Studies - where we've built software that flourishes.
-            </p>
           </div>
           <Link
             href="/journal"

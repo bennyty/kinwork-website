@@ -8,9 +8,9 @@ published: true
 
 The small businesses community has been under-served by technological advances until now.  Now Kinwork is bringing the customized technology that is available only to large corporations to you.  Kinwork provides customized workflow automation to small businesses to increase business efficiency and improve quality of work life for small businesses owners.
 
-At Kinwork we treat you like family.  We listen to you.  We build and provide solutions to solve your problems.  We keep your trade secrets and we will never discuss your business with anyone else.  The process starts with you.
+At Kinwork we treat you like family.  We listen to you.  We build and provide solutions to solve your problems.  We keep your trade secrets and we will never discuss your business with anyone else.
 
-We would feel so honored to be invited into your house.  We provide a consultation and will propose solutions at no cost to you.  First, we spend hours to listen and to take notes.  We will work to understand your business, your process, your points of joy and pain.  We review the tools your business utilizes and its configuration to understand the whole process.
+The process starts with listening to you.  We would feel so honored to be invited into your house.  We provide a consultation and will propose solutions at no cost to you.  First, we willl spend a few hours to listen and take notes.  We will work to understand your business, your process, your points of joy and pain.  We review the tools your business utilizes and its configuration to understand the whole process.
 
 We come back with a customized solution that is tailored specifically to your business process.  If we prove to you that the solution improves your process, then you can choose to license the solutions at an agreed-upon affordable monthly price.
 

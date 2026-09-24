@@ -4,7 +4,7 @@ import { FlowerBox } from "@/components/house";
 import { getAllPosts, formatDate } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Case studies & articles",
+  title: "Case Studies & Articles",
   description:
     "Case studies and articles from Kinwork on building bespoke software for small businesses.",
 };
@@ -14,12 +14,7 @@ export default function JournalPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-6 mt-16">
-      <FlowerBox className="h-9 w-auto mb-5" />
-      <h1 className="font-serif text-4xl text-ink">From the window box</h1>
-      <p className="mt-3 text-lg text-ink-soft">
-        Case studies from the businesses we&apos;ve worked with, and articles
-        on building software that fits the way you work.
-      </p>
+      <h1 className="font-serif text-4xl text-ink">Case Studies &amp; Articles</h1>
       <div className="mt-12 space-y-8">
         {posts.map((post) => (
           <Link
